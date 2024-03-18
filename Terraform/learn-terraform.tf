@@ -37,4 +37,12 @@ resource "aws_instance" "instance" {
   }
 }
 
+resource "aws_route53_record" "frontend" {
+  zone_id = "Z049869630CEPSXALO943"
+  name    = "frontend-dev.devopskumar.site"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.frontend-dev.private_ip]
+
+
 
