@@ -9,10 +9,4 @@ resource "aws_instance" "web" {
   }
 }
 
-resource "aws_route53_record" "frontend" {
-  zone_id = aws_route53_zone.primary.zone_id
-  name    = "frontend.devopskumar.site"
-  type    = "A"
-  ttl     = 30
-  records = [172.31.21.241]
-}
+
