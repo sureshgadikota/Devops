@@ -11,7 +11,7 @@ resource "aws_instance" "web" {
 
 
   tags = {
-    Name = "var.components"
+    Name = element("var.components" , null )
   }
 }
 
