@@ -1,3 +1,9 @@
+variable "components" {
+  default = [frontend , catalogue]
+
+
+}
+
 resource "aws_instance" "web" {
   ami           = "ami-0f3c7d07486cad139"
   instance_type = "t2.micro"
@@ -5,7 +11,7 @@ resource "aws_instance" "web" {
 
 
   tags = {
-    Name = "frontend"
+    Name = "var.components"
   }
 }
 
