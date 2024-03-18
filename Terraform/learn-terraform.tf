@@ -13,7 +13,7 @@ resource "aws_instance" "web" {
 
 
   tags = {
-    for_each = var.components
+
     name     = lookup(var.components, each.value["name"], null)
   }
 }
