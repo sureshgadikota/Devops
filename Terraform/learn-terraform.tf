@@ -1,3 +1,15 @@
+variable "ami" {
+  default = "ami-0f3c7d07486cad139"
+}
+
+variable "instance_type" {
+  default = "t2.micro"
+}
+
+variable "security_groups" {
+  default = ["sg-006a2998b3aed70ca"]
+}
+
 variable "components" {
   default = {
     frontend  = { name = "frontend-dev" }
@@ -13,10 +25,10 @@ variable "components" {
   }
 }
 resource "aws_instance" "instance" {
-  for_each               = var.components
-  ami           = "ami-0f3c7d07486cad139"
-  instance_type = "t2.micro"
-  vpc_security_group_ids = ["sg-006a2998b3aed70ca"]
+  for_each      = var.components
+  ami           = var.ami
+  instance_type = var.instance_type
+  vpc_security_group_ids = var.security_groups
 
 
 
