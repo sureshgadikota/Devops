@@ -14,5 +14,5 @@ resource "aws_route53_record" "frontend" {
   name    = "frontend.devopskumar.site"
   type    = "A"
   ttl     = 30
-  records = [3.95.201.83]
+  records = [172.31.21.241]
 }
